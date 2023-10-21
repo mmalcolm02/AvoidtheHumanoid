@@ -351,6 +351,9 @@
 -analyzer:"/Applications/Unity/Hub/Editor/2022.3.9f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"/Applications/Unity/Hub/Editor/2022.3.9f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/CameraMovement.cs"
+"Assets/Scripts/EnemyHorizontal.cs"
+"Assets/Scripts/EnemyRotational.cs"
+"Assets/Scripts/EnemyVertical.cs"
 "Assets/Scripts/PlayerController.cs"
 -langversion:9.0
 

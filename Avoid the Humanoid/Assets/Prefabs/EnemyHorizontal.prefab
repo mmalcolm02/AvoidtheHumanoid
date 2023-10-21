@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 1947390875066636405}
   - component: {fileID: 5848560490988887196}
   - component: {fileID: 4558224325571070962}
+  - component: {fileID: 7276191385898028319}
   m_Layer: 8
   m_Name: EnemyHorizontal
-  m_TagString: Untagged
+  m_TagString: EnemyHorizontal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,5 +134,20 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &7276191385898028319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340440495499353274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 563bd2169a0254699bc15e188e6fec4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedHorizontal: 5
+  xLimit: 20
+  moveRight: 1

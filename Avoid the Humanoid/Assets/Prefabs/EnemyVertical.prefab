@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3379368979996456408}
   - component: {fileID: 2099634148065493985}
   - component: {fileID: -1811256315990203218}
+  - component: {fileID: -8995681362999897513}
   m_Layer: 8
   m_Name: EnemyVertical
   m_TagString: Untagged
@@ -151,3 +152,25 @@ MonoBehaviour:
   speedHorizontal: 5
   zLimit: 47
   moveForward: 1
+--- !u!114 &-8995681362999897513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380042725035659022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2290472f31fb4462dab988467cd85a5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 20
+  angle: 90
+  playerRef: {fileID: 0}
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 128
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 512
+  canSeePlayer: 0

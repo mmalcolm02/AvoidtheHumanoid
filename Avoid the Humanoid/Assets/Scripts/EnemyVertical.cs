@@ -24,25 +24,27 @@ public class EnemyVertical : MonoBehaviour
         if (moveForward && transform.position.z < (startingPos.z + (2 * zLimit)))
         {
             transform.Translate(Vector3.forward * speedHorizontal * Time.deltaTime);
-            Debug.Log("Move Forward = " + moveForward + " and moving forward");
+            //Debug.Log("Move Forward = " + moveForward + " and moving forward");
         }
 
         if (moveForward && transform.position.z > (startingPos.z + (2 * zLimit - 1)))
           {
              moveForward = false;
-             Debug.Log("Move Forward = " + moveForward);
+            transform.Rotate(0, 180, 0);
+             //Debug.Log("Move Forward = " + moveForward);
         }
 
           if (!moveForward && transform.position.z > startingPos.z)
           {
-              Debug.Log("Move Forward = " + moveForward + " and moving backwards");
-             transform.Translate(Vector3.forward * -speedHorizontal * Time.deltaTime);
+             //Debug.Log("Move Forward = " + moveForward + " and moving backwards");
+             transform.Translate(Vector3.forward * speedHorizontal * Time.deltaTime);
         }
 
         if (!moveForward && transform.position.z < (startingPos.z + 1))
             {
             moveForward = true;
-            Debug.Log("Move Forward = " + moveForward);
-            }
+            transform.Rotate(0, 180, 0);
+            //Debug.Log("Move Forward = " + moveForward);
+        }
     }
 }

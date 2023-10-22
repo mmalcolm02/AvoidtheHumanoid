@@ -6,7 +6,7 @@ public class EnemyHorizontal : MonoBehaviour
 {
 
     public float speedHorizontal = 5;
-    public float xLimit = 47;
+    public float xLimit = 47; //houndaries of enemy movement
     private Rigidbody enemyRB;
     public bool moveRight = true;
 
@@ -20,7 +20,7 @@ public class EnemyHorizontal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //horizontal movement based on xLimits with debug logs
         if (moveRight && transform.position.x < xLimit)
         {
             transform.Translate(Vector3.forward * speedHorizontal * Time.deltaTime);

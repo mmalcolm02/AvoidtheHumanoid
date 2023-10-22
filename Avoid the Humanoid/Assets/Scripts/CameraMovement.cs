@@ -19,7 +19,7 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //follow the player from above, only z translation so the whole hoizontal level width visible
         transform.position = new Vector3(0,0,player.transform.position.z) + offset;
 
     }

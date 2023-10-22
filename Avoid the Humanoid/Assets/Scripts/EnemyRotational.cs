@@ -5,8 +5,9 @@ using UnityEngine;
 public class EnemyRotational : MonoBehaviour
 {
 
-    public bool rotationTime = false;
-    public int rotationAngle = 1;
+   
+    public float angleOfRotation = -45.0f;
+    public float rotationDelay = 3.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,12 +21,12 @@ public class EnemyRotational : MonoBehaviour
         
     }
 
+    //coroutine to rotate the enemy back and forth every seconds equal to rotationDelay
     IEnumerator RotationControl()
     {
-        yield return new WaitForSeconds(3);
-        transform.Rotate(0, (rotationAngle * -45), 0);
-        rotationAngle = -rotationAngle;
-        rotationTime = !rotationTime;
+        yield return new WaitForSeconds(rotationDelay);
+        transform.Rotate(0, (angleOfRotation), 0);
+        angleOfRotation = -angleOfRotation;
         StartCoroutine(RotationControl());
 
 

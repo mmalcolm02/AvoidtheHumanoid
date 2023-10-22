@@ -5,14 +5,15 @@ using UnityEngine;
 public class EnemyVertical : MonoBehaviour
 {
     public float speedHorizontal = 5;
-    public float zLimit = 35;
+    public float zRange = 70; //how far enemy will travel
     private Rigidbody enemyRB;
-    public bool moveForward = true;
+    public bool moveForward = true; //bool to determine enemy direction
     private Vector3 startingPos;
 
     // Start is called before the first frame update
     void Start()
     {
+        //determine starting position of the enemy
         startingPos = transform.position;
 
     }
@@ -20,14 +21,14 @@ public class EnemyVertical : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (moveForward && transform.position.z < (startingPos.z + (2 * zLimit)))
+        //translation details for the enemies including debug logs to check
+        if (moveForward && transform.position.z < (startingPos.z + (zRange)))
         {
             transform.Translate(Vector3.forward * speedHorizontal * Time.deltaTime);
             //Debug.Log("Move Forward = " + moveForward + " and moving forward");
         }
 
-        if (moveForward && transform.position.z > (startingPos.z + (2 * zLimit - 1)))
+        if (moveForward && transform.position.z > (startingPos.z + (zRange - 1)))
           {
              moveForward = false;
             transform.Rotate(0, 180, 0);

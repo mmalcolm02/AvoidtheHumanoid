@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7140768988269481608}
   - component: {fileID: 9072168203516675551}
   - component: {fileID: -8715012499105431124}
-  - component: {fileID: -1312638870357241040}
+  - component: {fileID: 6039518995935175589}
   m_Layer: 8
   m_Name: EnemyRotationalCube
   m_TagString: Untagged
@@ -122,6 +122,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angleOfRotation: -45
   rotationDelay: 3
+  mumble: {fileID: 8300000, guid: 4714bc4dc166c4a4eb2147e6ea8b0db2, type: 3}
+  whatThe: {fileID: 8300000, guid: 4de6e1ac23b3544008c1af842288a317, type: 3}
+  fovScript: {fileID: 0}
 --- !u!114 &-8715012499105431124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,7 +147,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   canSeePlayer: 0
---- !u!82 &-1312638870357241040
+--- !u!82 &6039518995935175589
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,18 +157,18 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4afea7ad25747474995ce305a756eebe, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.05
+  m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 229
+  Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 40
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -200,7 +203,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

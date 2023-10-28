@@ -356,7 +356,8 @@
 "Assets/Scripts/EnemyRotational.cs"
 "Assets/Scripts/EnemyVertical.cs"
 "Assets/Scripts/FieldOfView.cs"
-"Assets/Scripts/FielfOfViewVisibility.cs"
+"Assets/Scripts/FieldOfViewVisibility.cs"
+"Assets/Scripts/FollowEnemy.cs"
 "Assets/Scripts/PlayerController.cs"
 -langversion:9.0
 

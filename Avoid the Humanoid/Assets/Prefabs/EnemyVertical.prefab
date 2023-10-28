@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2099634148065493985}
   - component: {fileID: -1811256315990203218}
   - component: {fileID: -8995681362999897513}
-  - component: {fileID: 984227006790382634}
+  - component: {fileID: -2663201310322127453}
   m_Layer: 8
   m_Name: EnemyVertical
   m_TagString: Untagged
@@ -153,6 +153,9 @@ MonoBehaviour:
   speedHorizontal: 5
   zRange: 70
   moveForward: 1
+  mumble: {fileID: 8300000, guid: 4afea7ad25747474995ce305a756eebe, type: 3}
+  whatThe: {fileID: 8300000, guid: 4de6e1ac23b3544008c1af842288a317, type: 3}
+  fovScript: {fileID: 0}
 --- !u!114 &-8995681362999897513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,7 +178,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   canSeePlayer: 0
---- !u!82 &984227006790382634
+--- !u!82 &-2663201310322127453
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -185,18 +188,18 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4714bc4dc166c4a4eb2147e6ea8b0db2, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.05
+  m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 217
+  Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 40
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -231,7 +234,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

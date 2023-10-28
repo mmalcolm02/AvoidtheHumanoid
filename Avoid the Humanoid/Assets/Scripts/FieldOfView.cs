@@ -62,6 +62,7 @@ public class FieldOfView : MonoBehaviour
                 {
                     canSeePlayer = true;
                     Debug.Log("Game Over");
+                   
                 }
                 else
                     canSeePlayer = false;
@@ -75,4 +76,11 @@ public class FieldOfView : MonoBehaviour
             canSeePlayer = false;
         //Debug.Log("Unseen");
     }
+
+    private void DrawArc()
+    {
+
+
+    }
+
 }

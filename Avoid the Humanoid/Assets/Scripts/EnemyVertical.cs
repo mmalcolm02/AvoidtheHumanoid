@@ -9,6 +9,12 @@ public class EnemyVertical : MonoBehaviour
     private Rigidbody enemyRB;
     public bool moveForward = true; //bool to determine enemy direction
     private Vector3 startingPos;
+    public AudioClip mumble;
+    public AudioClip whatThe;
+    private AudioSource enemyAudio;
+    private bool gameOver = false;
+
+    public FieldOfView fovScript;
 
     // Start is called before the first frame update
     void Start()
@@ -16,11 +22,24 @@ public class EnemyVertical : MonoBehaviour
         //determine starting position of the enemy
         startingPos = transform.position;
 
+        fovScript = GetComponent<FieldOfView>();
+        enemyAudio = GetComponent<AudioSource>();
+        enemyAudio.clip = mumble; //starts the enemy mumbling
+        enemyAudio.loop = true;
+        enemyAudio.Play();
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (fovScript.canSeePlayer && gameOver == false)
+        {
+            enemyAudio.Stop(); //stops mumble
+            enemyAudio.PlayOneShot(whatThe); //plays the "what the"
+            gameOver = true; //stops the what the looping heavily
+        }
+
         //translation details for the enemies including debug logs to check
         if (moveForward && transform.position.z < (startingPos.z + (zRange)))
         {

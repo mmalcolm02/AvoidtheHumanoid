@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerRB = GetComponent<Rigidbody>();
+        
     }
 
     // Update is called once per frame
@@ -21,7 +22,7 @@ public class PlayerController : MonoBehaviour
         PlayerMovement();
         PlayerContraints();
     }
-    //Player Movement based on translate function
+    //Player Movement based on Add Force function
     void PlayerMovement()
     {
         float horizontalInput = Input.GetAxis("Horizontal");

@@ -5,30 +5,41 @@ using UnityEngine;
 public class FielfOfViewVisibility : MonoBehaviour
 {
 
+    float fovAngle = 90.0f;
     
-
-
-
+    float viewRadius = 20.0f;
+    int rayCount = 50;
+   
+    float angle = 0f;
 
     // Start is called before the first frame update
     private void Start()
     {
 
-        float fovAngle = 90.0f;
-        Vector3 origin = Vector3.zero;
-        float viewRadius = 20.0f;
-        int rayCount = 50;
-        float angleIncrease = fovAngle / rayCount;
-        float angle = 0f;
+        
 
 
 
 
-    //meshrenderer
-    Mesh mesh = new Mesh();
+        //meshrenderer
+
+        
+
+       
+
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        Mesh mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
 
-        Vector3[] vertices = new Vector3[rayCount+1+1];
+        float angleIncrease = fovAngle / rayCount;
+        Vector3 origin = Vector3.zero;
+
+        Vector3[] vertices = new Vector3[rayCount + 1 + 1];
         Vector2[] uv = new Vector2[vertices.Length];
         int[] triangles = new int[rayCount * 3];
 
@@ -38,7 +49,7 @@ public class FielfOfViewVisibility : MonoBehaviour
         int triangleIndex = 0;
         for (int i = 0; i <= rayCount; i++)
         {
-            Vector3 vertex; 
+            Vector3 vertex;
             RaycastHit2D raycastHit2D = Physics2D.Raycast(origin, GetVectorFromAngle(angle), viewRadius);
             if (raycastHit2D.collider == null)
             {
@@ -66,18 +77,6 @@ public class FielfOfViewVisibility : MonoBehaviour
         mesh.vertices = vertices;
         mesh.uv = uv;
         mesh.triangles = triangles;
-
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-        //determine position
-        //draw vertices of the mesh
-        //raycast to check for obstacles
-
 
 
     }

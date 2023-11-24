@@ -13,6 +13,7 @@ public class EnemyHorizontal : MonoBehaviour
     public AudioClip whatThe;
     private AudioSource enemyAudio;
     private bool gameOver = false;
+    public Animator anim;
 
     public FieldOfView fovScript;
 
@@ -41,12 +42,15 @@ public class EnemyHorizontal : MonoBehaviour
         //horizontal movement based on xLimits with debug logs
         if (moveRight && transform.position.x < xLimit)
         {
+            
             transform.Translate(Vector3.forward * speedHorizontal * Time.deltaTime);
+            this.anim.SetBool("isWalking", true);
             //Debug.Log("Move Right = " + moveRight + " and moving right");
         }
 
         if (moveRight && transform.position.x > (xLimit - 1))
         {
+            
             moveRight = false;
             transform.Rotate(0, 180, 0);
             //Debug.Log("Move Right = " + moveRight);
@@ -56,6 +60,7 @@ public class EnemyHorizontal : MonoBehaviour
         {
             //Debug.Log("Move Right = " + moveRight + " and moving left");
             transform.Translate(Vector3.forward * speedHorizontal * Time.deltaTime);
+            this.anim.SetBool("isWalking", true);
         }
 
         if (!moveRight && transform.position.x < (-xLimit + 1))

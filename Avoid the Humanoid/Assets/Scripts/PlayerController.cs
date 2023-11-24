@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float rangeX = 47;
     public float rangeZ = 207;
     public Rigidbody playerRB;
+    public Animator anim;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
     {
         PlayerMovement();
         PlayerContraints();
+        Still();
     }
     //Player Movement based on Add Force function
     void PlayerMovement()
@@ -28,8 +30,19 @@ public class PlayerController : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        playerRB.AddForce(Vector3.right * horizontalInput * speed);
-        playerRB.AddForce(Vector3.forward * verticalInput * speed);
+        Vector3 movement = this.transform.forward * verticalInput + this.transform.right *
+horizontalInput;
+        movement.Normalize();
+
+        this.transform.position += movement * 0.1f;
+
+        this.anim.SetFloat("vertical", verticalInput);
+        this.anim.SetFloat("horizontal", horizontalInput);
+    }
+
+    private void Still()
+    {
+        this.playerRB.AddForce(Vector3.down * 1 * Time.deltaTime, ForceMode.Impulse);
     }
 
     //Player Constrained by boundaries

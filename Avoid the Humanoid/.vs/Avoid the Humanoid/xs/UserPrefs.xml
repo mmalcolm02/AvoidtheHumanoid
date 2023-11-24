@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{DFA42B8C-AE9E-35CA-A67D-9F23568EE777}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UIHandler.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MainCameraMovement.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="10" Column="31" />
-      <File FileName="Assets/Scripts/CameraMovement.cs" />
-      <File FileName="Assets/Scripts/EnemyHorizontal.cs" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="37" Column="49" />
+      <File FileName="Assets/Scripts/CameraMovement.cs" Line="42" Column="2" />
+      <File FileName="Assets/Scripts/EnemyHorizontal.cs" Line="67" Column="10" />
       <File FileName="Assets/Scripts/EnemyVertical.cs" />
       <File FileName="Assets/Scripts/EnemyRotational.cs" />
       <File FileName="Assets/Scripts/FieldOfView.cs" Line="15" Column="30" />
@@ -11,7 +11,8 @@
       <File FileName="Assets/Scripts/DetectionScript.cs" />
       <File FileName="Assets/Scripts/FollowEnemy.cs" />
       <File FileName="Assets/Scripts/InGameMenuScript.cs" Line="37" Column="1" />
-      <File FileName="Assets/Scripts/UIHandler.cs" Line="4" Column="19" />
+      <File FileName="Assets/Scripts/UIHandler.cs" Line="35" Column="1" />
+      <File FileName="Assets/Scripts/MainCameraMovement.cs" Line="8" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,7 +21,7 @@
             <Node name="Assets" expanded="True">
               <Node name="Editor" expanded="True" />
               <Node name="Scripts" expanded="True">
-                <Node name="UIHandler.cs" selected="True" />
+                <Node name="MainCameraMovement.cs" selected="True" />
               </Node>
             </Node>
           </Node>

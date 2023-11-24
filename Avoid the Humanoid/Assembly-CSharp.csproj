@@ -63,6 +63,7 @@
     <Compile Include="Assets/Scripts/EnemyHorizontal.cs" />
     <Compile Include="Assets/Scripts/UIHandler.cs" />
     <Compile Include="Assets/Scripts/EnemyVertical.cs" />
+    <Compile Include="Assets/Scripts/MainCameraMovement.cs" />
     <Compile Include="Assets/Scripts/InGameMenuScript.cs" />
     <Compile Include="Assets/Scripts/EnemyRotational.cs" />
     <Compile Include="Assets/Scripts/FollowEnemy.cs" />

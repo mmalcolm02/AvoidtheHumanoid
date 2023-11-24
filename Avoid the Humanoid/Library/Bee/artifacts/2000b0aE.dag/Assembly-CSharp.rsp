@@ -343,6 +343,7 @@
 "Assets/Scripts/FieldOfViewVisibility.cs"
 "Assets/Scripts/FollowEnemy.cs"
 "Assets/Scripts/InGameMenuScript.cs"
+"Assets/Scripts/MainCameraMovement.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/UIHandler.cs"
 -langversion:9.0

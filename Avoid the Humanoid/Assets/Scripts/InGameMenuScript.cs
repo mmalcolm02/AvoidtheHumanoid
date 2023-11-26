@@ -13,7 +13,7 @@ public class InGameMenuScript : MonoBehaviour
         {
             case "MainMenu":
                 {
-                    SceneManager.LoadScene("MenuScene");
+                    SceneManager.LoadScene("Main Menu");
                     break;
                 }
 

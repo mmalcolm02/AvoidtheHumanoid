@@ -58,13 +58,16 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/2022.3.9f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/Scripts/DotProductScript.cs" />
     <Compile Include="Assets/Scripts/DetectionScript.cs" />
     <Compile Include="Assets/Scripts/CameraMovement.cs" />
     <Compile Include="Assets/Scripts/EnemyHorizontal.cs" />
     <Compile Include="Assets/Scripts/UIHandler.cs" />
     <Compile Include="Assets/Scripts/EnemyVertical.cs" />
     <Compile Include="Assets/Scripts/MainCameraMovement.cs" />
+    <Compile Include="Assets/Scripts/GameManager.cs" />
     <Compile Include="Assets/Scripts/InGameMenuScript.cs" />
+    <Compile Include="Assets/Scripts/timer.cs" />
     <Compile Include="Assets/Scripts/EnemyRotational.cs" />
     <Compile Include="Assets/Scripts/FollowEnemy.cs" />
     <Compile Include="Assets/Scripts/FieldOfViewVisibility.cs" />

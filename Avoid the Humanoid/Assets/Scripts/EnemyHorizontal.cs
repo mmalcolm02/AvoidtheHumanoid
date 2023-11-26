@@ -15,12 +15,12 @@ public class EnemyHorizontal : MonoBehaviour
     private bool gameOver = false;
     public Animator anim;
 
-    public FieldOfView fovScript;
+    public DotProductScript dotProductScript;
 
     // Start is called before the first frame update
     void Start()
     {
-        fovScript = GetComponent<FieldOfView>();
+        dotProductScript = GetComponent<DotProductScript>();
         enemyAudio = GetComponent<AudioSource>();
         enemyAudio.clip = mumble; //starts the enemy mumbling
         enemyAudio.loop = true;
@@ -31,7 +31,7 @@ public class EnemyHorizontal : MonoBehaviour
     void Update()
     {
 
-        if (fovScript.canSeePlayer && gameOver == false)
+        if (dotProductScript.canSeePlayer && gameOver == false)
         {
             enemyAudio.Stop(); //stops mumble
             enemyAudio.PlayOneShot(whatThe); //plays the "what the"

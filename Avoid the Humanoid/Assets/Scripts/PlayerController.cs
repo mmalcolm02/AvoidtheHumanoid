@@ -6,9 +6,12 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 10;
     public float rangeX = 47;
-    public float rangeZ = 207;
+    public float rangeZ = 280;
     public Rigidbody playerRB;
     public Animator anim;
+    public GameObject diedCanvas;
+    public GameObject buttonHolderCanvas;
+    public bool collision = false;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +37,7 @@ public class PlayerController : MonoBehaviour
 horizontalInput;
         movement.Normalize();
 
-        this.transform.position += movement * 0.1f;
+        this.transform.position += movement * 0.2f;
 
         this.anim.SetFloat("vertical", verticalInput);
         this.anim.SetFloat("horizontal", horizontalInput);
@@ -65,5 +68,12 @@ horizontalInput;
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, -rangeZ);
         }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        collision = true;
+        buttonHolderCanvas.gameObject.SetActive(true);
+        diedCanvas.gameObject.SetActive(true);
     }
 }

@@ -47,7 +47,7 @@ public class EnemyHorizontal : MonoBehaviour
             
             transform.Translate(Vector3.forward * speedHorizontal * Time.deltaTime);
             this.anim.SetBool("isWalking", true);
-            Debug.Log("Move Right = " + moveRight + " and moving right");
+            //Debug.Log("Move Right = " + moveRight + " and moving right");
         }
 
         if (moveRight && transform.position.x > (xLimit - 1))
@@ -56,12 +56,12 @@ public class EnemyHorizontal : MonoBehaviour
             moveRight = false;
             moveLeft = true;
             transform.Rotate(0, 180, 0);
-            Debug.Log("Move Right = " + moveRight);
+            //Debug.Log("Move Right = " + moveRight);
         }
 
         if (!moveRight && transform.position.x > -xLimit)
         {
-            Debug.Log("Move Right = " + moveRight + " and moving left");
+            //Debug.Log("Move Right = " + moveRight + " and moving left");
             transform.Translate(Vector3.forward * speedHorizontal * Time.deltaTime);
             this.anim.SetBool("isWalking", true);
         }
@@ -71,7 +71,7 @@ public class EnemyHorizontal : MonoBehaviour
             moveRight = true;
             moveLeft = false;
             transform.Rotate(0, 180, 0);
-            Debug.Log("Move Right = " + moveRight);
+            //Debug.Log("Move Right = " + moveRight);
         }
         }
 }

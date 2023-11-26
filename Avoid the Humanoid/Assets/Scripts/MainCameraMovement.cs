@@ -6,7 +6,7 @@ public class MainCameraMovement : MonoBehaviour
 {
 
     public PlayerController player;
-    public float yOffset = 50;
+    public float yOffset = 48;
 
     // Start is called before the first frame update
     void Start()

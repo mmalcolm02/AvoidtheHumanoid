@@ -353,6 +353,7 @@
 -analyzer:"/Applications/Unity/Hub/Editor/2022.3.9f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"/Applications/Unity/Hub/Editor/2022.3.9f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/CameraMovement.cs"
+"Assets/Scripts/CarMovement.cs"
 "Assets/Scripts/DetectionScript.cs"
 "Assets/Scripts/DotProductScript.cs"
 "Assets/Scripts/EnemyHorizontal.cs"
@@ -362,6 +363,7 @@
 "Assets/Scripts/InGameMenuScript.cs"
 "Assets/Scripts/MainCameraMovement.cs"
 "Assets/Scripts/PlayerController.cs"
+"Assets/Scripts/SpawnManager.cs"
 "Assets/Scripts/timer.cs"
 "Assets/Scripts/UIHandler.cs"
 -langversion:9.0

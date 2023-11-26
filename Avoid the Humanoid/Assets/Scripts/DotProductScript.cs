@@ -12,6 +12,8 @@ public class DotProductScript : MonoBehaviour
     public PlayerController player;
     public GameObject enemy;
     public bool canSeePlayer;
+    public GameObject gameOverCanvas;
+    public GameObject buttonHolderCanvas;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +46,9 @@ public class DotProductScript : MonoBehaviour
         if (dotOverMag > visibility && distanceBetween <= radius)
         {
             canSeePlayer = true;
+            Debug.Log("Can See Player");
+            gameOverCanvas.gameObject.SetActive(true);
+            buttonHolderCanvas.gameObject.SetActive(true);
         }
 
     }

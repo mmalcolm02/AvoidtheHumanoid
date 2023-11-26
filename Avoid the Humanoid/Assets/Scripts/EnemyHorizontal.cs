@@ -9,13 +9,14 @@ public class EnemyHorizontal : MonoBehaviour
     public float xLimit = 47; //houndaries of enemy movement
     private Rigidbody enemyRB;
     public bool moveRight = true;
+    public bool moveLeft = false;
     public AudioClip mumble;
     public AudioClip whatThe;
     private AudioSource enemyAudio;
     private bool gameOver = false;
     public Animator anim;
 
-    public DotProductScript dotProductScript;
+    private DotProductScript dotProductScript;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,7 @@ public class EnemyHorizontal : MonoBehaviour
         enemyAudio.clip = mumble; //starts the enemy mumbling
         enemyAudio.loop = true;
         enemyAudio.Play();
+        this.anim.SetBool("isWalking", true);
     }
 
     // Update is called once per frame
@@ -45,20 +47,21 @@ public class EnemyHorizontal : MonoBehaviour
             
             transform.Translate(Vector3.forward * speedHorizontal * Time.deltaTime);
             this.anim.SetBool("isWalking", true);
-            //Debug.Log("Move Right = " + moveRight + " and moving right");
+            Debug.Log("Move Right = " + moveRight + " and moving right");
         }
 
         if (moveRight && transform.position.x > (xLimit - 1))
         {
             
             moveRight = false;
+            moveLeft = true;
             transform.Rotate(0, 180, 0);
-            //Debug.Log("Move Right = " + moveRight);
+            Debug.Log("Move Right = " + moveRight);
         }
 
         if (!moveRight && transform.position.x > -xLimit)
         {
-            //Debug.Log("Move Right = " + moveRight + " and moving left");
+            Debug.Log("Move Right = " + moveRight + " and moving left");
             transform.Translate(Vector3.forward * speedHorizontal * Time.deltaTime);
             this.anim.SetBool("isWalking", true);
         }
@@ -66,8 +69,9 @@ public class EnemyHorizontal : MonoBehaviour
         if (!moveRight && transform.position.x < (-xLimit + 1))
         {
             moveRight = true;
+            moveLeft = false;
             transform.Rotate(0, 180, 0);
-            //Debug.Log("Move Right = " + moveRight);
+            Debug.Log("Move Right = " + moveRight);
         }
         }
 }

@@ -5,13 +5,13 @@ using UnityEngine;
 public class DetectionScript : MonoBehaviour
 {
 
-    private FieldOfView fov;
+    private DotProductScript dps;
 
     // Start is called before the first frame update
     void Start()
     {
 
-        fov = GetComponent<FieldOfView>();
+        dps = GetComponent<DotProductScript>();
 
 
     }
@@ -20,7 +20,7 @@ public class DetectionScript : MonoBehaviour
     void Update()
     {
 
-        if (fov.canSeePlayer == true)
+        if (dps.canSeePlayer == true)
         {
             Debug.Log("seen");
         }

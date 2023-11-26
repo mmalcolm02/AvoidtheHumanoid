@@ -13,15 +13,19 @@ public class EnemyRotational : MonoBehaviour
     public AudioClip whatThe;
     private AudioSource enemyAudio;
 
-    public FieldOfView fovScript;
+    private DotProductScript dotProductScript;
     private bool gameOver = false;
+
+    public Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
+
+        this.anim.Play("Idle");
         StartCoroutine(RotationControl());
 
-        fovScript = GetComponent<FieldOfView>();
+        dotProductScript = GetComponent<DotProductScript>();
         enemyAudio = GetComponent<AudioSource>();
         enemyAudio.clip = mumble; //starts the enemy mumbling
         enemyAudio.loop = true;
@@ -31,7 +35,7 @@ public class EnemyRotational : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (fovScript.canSeePlayer && gameOver == false)
+        if (dotProductScript.canSeePlayer && gameOver == false)
         {
             enemyAudio.Stop(); //stops mumble
             enemyAudio.PlayOneShot(whatThe); //plays the "what the"

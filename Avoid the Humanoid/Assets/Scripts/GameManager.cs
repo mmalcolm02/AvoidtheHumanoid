@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public DotProductScript dotProductScript;
+    private DotProductScript dotProductScript;
     public Timer timer;
     public GameObject gameOverCanvas;
     public GameObject buttonHolderCanvas;
@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
             buttonHolderCanvas.gameObject.SetActive(true);
         }
 
-        if (timer.timeUp)
+        if (timer.timeUp && !gameOverCanvas.activeSelf)
         {
             buttonHolderCanvas.gameObject.SetActive(true);
             timeUpCanvas.gameObject.SetActive(true);
@@ -39,11 +39,11 @@ public class GameManager : MonoBehaviour
         }
 
         //game over consequences
-        if (dotProductScript.canSeePlayer == true)
-        {
-            gameOverCanvas.gameObject.SetActive(true);
-            buttonHolderCanvas.gameObject.SetActive(true);
-        }
+        //if (dotProductScript.canSeePlayer == true)
+        //{
+        //    gameOverCanvas.gameObject.SetActive(true);
+        //    buttonHolderCanvas.gameObject.SetActive(true);
+       // }
 
        
     }

@@ -6,11 +6,14 @@ public class SpawnManager : MonoBehaviour
 {
 
     public GameObject carPrefab;
-    private Vector3 spawnPosLeft = new Vector3(-98, 6, 136);
-    private Vector3 spawnPosRight = new Vector3(98, 6, 116);
+    public Vector3 spawnPosLeft = new Vector3(-98, 6, 136);
+    public Vector3 spawnPosRight = new Vector3(98, 6, 116);
     public float eulerX;
     public float eulerY;
     public float eulerZ;
+    public float eulerRX;
+    public float eulerRY;
+    public float eulerRZ;
 
 
 
@@ -33,7 +36,7 @@ public class SpawnManager : MonoBehaviour
     void InstantiateLeft()
     {
         float leftTime = Random.Range(2, 5);
-        Instantiate(carPrefab, spawnPosLeft, carPrefab.transform.rotation);
+        Instantiate(carPrefab, spawnPosLeft, Quaternion.Euler(new Vector3(eulerRX, eulerRY, eulerRZ)));
         Debug.Log("Left");
         Invoke("InstantiateLeft",leftTime);
         
@@ -45,6 +48,5 @@ public class SpawnManager : MonoBehaviour
         Debug.Log("Right");
         Invoke("InstantiateRight", rightTime);
     }
-
 
 }

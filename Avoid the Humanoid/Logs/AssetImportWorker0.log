@@ -491,3 +491,31 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 3061.041957 seconds.
+  path: Assets/DesertEnvironment/OpuntiaCactus2.fbm/cactus_texture_by_stef7718_df1vkfw-414w-2x.jpeg
+  artifactKey: Guid(86bf344ce6d1c4565b306bfecade5035) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DesertEnvironment/OpuntiaCactus2.fbm/cactus_texture_by_stef7718_df1vkfw-414w-2x.jpeg using Guid(86bf344ce6d1c4565b306bfecade5035) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48eab4abd8da3d5b74e7779fdee73a2f') in 0.437421 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/Materials/Desert Seamless.jpeg
+  artifactKey: Guid(33043a5ff9eff43329b6b0d86b752a06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Desert Seamless.jpeg using Guid(33043a5ff9eff43329b6b0d86b752a06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d5a050e42e477367b0fd840a2282d0d') in 0.012159 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/DesertEnvironment/DistantPlains.fbm/Desert Seamless.jpeg
+  artifactKey: Guid(6d968a0d0f7ac47b69229f6f69a79895) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DesertEnvironment/DistantPlains.fbm/Desert Seamless.jpeg using Guid(6d968a0d0f7ac47b69229f6f69a79895) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a087d20a4cc7628aee30eb9da0b541b') in 0.006482 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 89, details: Operation aborted.
+AssetImportWorker is now disconnected from the server
+Process exiting

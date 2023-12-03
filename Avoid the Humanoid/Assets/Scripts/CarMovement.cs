@@ -12,8 +12,10 @@ public class CarMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(DestroyCar());
     }
+
+    
 
     // Update is called once per frame
     void Update()
@@ -21,6 +23,10 @@ public class CarMovement : MonoBehaviour
 
         transform.Translate(Vector3.down * carSpeed * Time.deltaTime);
     }
-    
 
+    IEnumerator DestroyCar()
+    {
+    yield return new WaitForSeconds(2);
+        Destroy(gameObject);
+}
 }

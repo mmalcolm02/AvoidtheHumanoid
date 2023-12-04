@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
 horizontalInput;
         movement.Normalize();
 
-        this.transform.position += movement * 0.2f;
+        this.transform.position += movement * 0.1f;
 
         this.anim.SetFloat("vertical", verticalInput);
         this.anim.SetFloat("horizontal", horizontalInput);

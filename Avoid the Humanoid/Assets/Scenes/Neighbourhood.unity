@@ -13806,9 +13806,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carPrefab: {fileID: 8055393873359520378, guid: 851a9f94ec0474a89b07200b86d31d70, type: 3}
+  spawnPosLeft: {x: -98, y: 6, z: 136}
+  spawnPosRight: {x: 98, y: 6, z: 116}
   eulerX: -90
   eulerY: 0
   eulerZ: -90
+  eulerRX: -90
+  eulerRY: 0
+  eulerRZ: 90
 --- !u!4 &1612463597
 Transform:
   m_ObjectHideFlags: 0

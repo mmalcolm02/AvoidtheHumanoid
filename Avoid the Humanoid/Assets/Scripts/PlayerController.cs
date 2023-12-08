@@ -11,7 +11,13 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
     public GameObject diedCanvas;
     public GameObject buttonHolderCanvas;
+    public GameObject successCanvas;
+    public GameObject timerCanvas;
     public bool collision = false;
+    public GameObject rocketOpen;
+    public GameObject rocketClosed;
+    public bool victory = false;
+    public bool hasPebble = false;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +32,13 @@ public class PlayerController : MonoBehaviour
         PlayerMovement();
         PlayerContraints();
         Still();
+
+        if (hasPebble && Input.GetKeyDown(KeyCode.Space))
+        {
+            //instantiate pebble
+            hasPebble = false;
+
+        }
     }
     //Player Movement based on Add Force function
     void PlayerMovement()
@@ -72,8 +85,39 @@ horizontalInput;
 
     void OnTriggerEnter(Collider other)
     {
+        if(other.gameObject.CompareTag("Car"))
+        {
+            Debug.Log("Car Collission");
+            collision = true;
+            Destroy(gameObject);
+            buttonHolderCanvas.gameObject.SetActive(true);
+            diedCanvas.gameObject.SetActive(true);
+        }
+
+        if (other.gameObject.CompareTag("Rocket"))
+        {
+            collision = true;
+            Destroy(gameObject);
+            Debug.Log("Rocket Collission");
+            rocketOpen.gameObject.SetActive(false);
+            rocketClosed.gameObject.SetActive(true);
+            successCanvas.gameObject.SetActive(true);
+            buttonHolderCanvas.gameObject.SetActive(true);
+            timerCanvas.gameObject.SetActive(false);
+            victory = true;
+        }
+
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
         collision = true;
-        buttonHolderCanvas.gameObject.SetActive(true);
-        diedCanvas.gameObject.SetActive(true);
+
+        //testing pebble power up
+        if (other.gameObject.CompareTag("Rocket"))
+        {
+            Destroy(other.gameObject);
+            hasPebble = true;
+        }
     }
 }

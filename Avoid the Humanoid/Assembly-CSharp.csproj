@@ -64,6 +64,7 @@
     <Compile Include="Assets/Scripts/EnemyHorizontal.cs" />
     <Compile Include="Assets/Scripts/UIHandler.cs" />
     <Compile Include="Assets/Scripts/EnemyVertical.cs" />
+    <Compile Include="Assets/Scripts/RocketTakeOff.cs" />
     <Compile Include="Assets/Scripts/MainCameraMovement.cs" />
     <Compile Include="Assets/Scripts/SpawnManager.cs" />
     <Compile Include="Assets/Scripts/GameManager.cs" />

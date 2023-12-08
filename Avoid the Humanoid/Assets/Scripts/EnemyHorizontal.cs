@@ -38,11 +38,14 @@ public class EnemyHorizontal : MonoBehaviour
             enemyAudio.Stop(); //stops mumble
             enemyAudio.PlayOneShot(whatThe); //plays the "what the"
             gameOver = true; //stops the what the looping heavily
+            this.anim.SetBool("isWalking", false);
+            this.anim.SetBool("isSurprised", true);
+            
         }
             
 
         //horizontal movement based on xLimits with debug logs
-        if (moveRight && transform.position.x < xLimit)
+        if (moveRight && transform.position.x < xLimit && !gameOver)
         {
             
             transform.Translate(Vector3.forward * speedHorizontal * Time.deltaTime);
@@ -50,7 +53,7 @@ public class EnemyHorizontal : MonoBehaviour
             //Debug.Log("Move Right = " + moveRight + " and moving right");
         }
 
-        if (moveRight && transform.position.x > (xLimit - 1))
+        if (moveRight && transform.position.x > (xLimit - 1) && !gameOver)
         {
             
             moveRight = false;
@@ -59,14 +62,14 @@ public class EnemyHorizontal : MonoBehaviour
             //Debug.Log("Move Right = " + moveRight);
         }
 
-        if (!moveRight && transform.position.x > -xLimit)
+        if (!moveRight && transform.position.x > -xLimit && !gameOver)
         {
             //Debug.Log("Move Right = " + moveRight + " and moving left");
             transform.Translate(Vector3.forward * speedHorizontal * Time.deltaTime);
             this.anim.SetBool("isWalking", true);
         }
 
-        if (!moveRight && transform.position.x < (-xLimit + 1))
+        if (!moveRight && transform.position.x < (-xLimit + 1) && !gameOver)
         {
             moveRight = true;
             moveLeft = false;

@@ -345,6 +345,7 @@
 "Assets/Scripts/InGameMenuScript.cs"
 "Assets/Scripts/MainCameraMovement.cs"
 "Assets/Scripts/PlayerController.cs"
+"Assets/Scripts/RocketTakeOff.cs"
 "Assets/Scripts/SpawnManager.cs"
 "Assets/Scripts/timer.cs"
 "Assets/Scripts/UIHandler.cs"

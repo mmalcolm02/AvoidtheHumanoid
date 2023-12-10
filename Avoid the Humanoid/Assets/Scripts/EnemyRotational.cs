@@ -48,7 +48,6 @@ public class EnemyRotational : MonoBehaviour
         if (gameOver)
         {
             this.anim.SetBool("isSurprised", true);
-            StopCoroutine(RotationControl());
         }
     }
 

@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public GameObject rocketClosed;
     public bool victory = false;
     public bool hasPebble = false;
+    public GameObject mainCamera;
 
     // Start is called before the first frame update
     void Start()
@@ -89,9 +90,12 @@ horizontalInput;
         {
             Debug.Log("Car Collission");
             collision = true;
+            mainCamera.gameObject.SetActive(true);
+            //this.ThirdPersonCamera.gameObject.SetActive(false);
             Destroy(gameObject);
             buttonHolderCanvas.gameObject.SetActive(true);
             diedCanvas.gameObject.SetActive(true);
+
         }
 
         if (other.gameObject.CompareTag("Rocket"))

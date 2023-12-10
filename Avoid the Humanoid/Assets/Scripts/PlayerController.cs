@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
 horizontalInput;
         movement.Normalize();
 
-        this.transform.position += movement * 0.1f;
+        this.transform.position += movement * 0.2f;
 
         this.anim.SetFloat("vertical", verticalInput);
         this.anim.SetFloat("horizontal", horizontalInput);
@@ -58,7 +58,7 @@ horizontalInput;
 
     private void Still()
     {
-        this.playerRB.AddForce(Vector3.down * 1 * Time.deltaTime, ForceMode.Impulse);
+       this.playerRB.AddForce(Vector3.down * 1 * Time.deltaTime, ForceMode.Impulse);
     }
 
     //Player Constrained by boundaries

@@ -7,6 +7,7 @@ TagManager:
   - EnemyHorizontal
   - Car
   - Rocket
+  - Ground
   layers:
   - Default
   - TransparentFX

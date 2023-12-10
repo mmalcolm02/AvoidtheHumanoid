@@ -6,7 +6,7 @@ public class MainCameraMovement : MonoBehaviour
 {
 
     public PlayerController player;
-    public float yOffset = 48;
+    public float yOffset = 46;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,23 @@ public class MainCameraMovement : MonoBehaviour
     {
 
        transform.position = new Vector3 (0,yOffset, player.transform.position.z);
+        CameraPositionConstraint();
 
+    }
 
+    //method to restrict main camera movement in Level 1
+    public void CameraPositionConstraint()
+    {
+        if (transform.position.z < -206)
+        {
+            transform.position = new Vector3(transform.position.x, yOffset, -206);
+        }
+
+        if (transform.position.z > 299)
+        {
+            transform.position = new Vector3(transform.position.x, yOffset, 299);
+        }
+
+       
     }
 }

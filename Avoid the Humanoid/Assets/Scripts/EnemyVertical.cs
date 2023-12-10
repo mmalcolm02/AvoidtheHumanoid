@@ -16,6 +16,8 @@ public class EnemyVertical : MonoBehaviour
 
     private DotProductScript dotProductScript;
 
+    public Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,14 +34,30 @@ public class EnemyVertical : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!gameOver)
+        {
+            EnemyMovement();
+
+        }
 
         if (dotProductScript.canSeePlayer && gameOver == false)
         {
             enemyAudio.Stop(); //stops mumble
             enemyAudio.PlayOneShot(whatThe); //plays the "what the"
             gameOver = true; //stops the what the looping heavily
+            this.anim.SetBool("isWalking", false);
+
+
         }
 
+        if (gameOver)
+        {
+            this.anim.SetBool("isSurprised", true);
+        }
+    }
+
+    public void EnemyMovement()
+    { 
         //translation details for the enemies including debug logs to check
         if (moveForward && transform.position.z < (startingPos.z + (zRange)))
         {

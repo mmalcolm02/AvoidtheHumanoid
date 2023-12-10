@@ -35,11 +35,20 @@ public class EnemyRotational : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (dotProductScript.canSeePlayer && gameOver == false)
         {
             enemyAudio.Stop(); //stops mumble
             enemyAudio.PlayOneShot(whatThe); //plays the "what the"
             gameOver = true; //stops the what the looping heavily
+
+
+        }
+
+        if (gameOver)
+        {
+            this.anim.SetBool("isSurprised", true);
+            StopCoroutine(RotationControl());
         }
     }
 
@@ -49,8 +58,11 @@ public class EnemyRotational : MonoBehaviour
         yield return new WaitForSeconds(rotationDelay);
         transform.Rotate(0, (angleOfRotation), 0);
         angleOfRotation = -angleOfRotation;
-        StartCoroutine(RotationControl());
-
+        if (!gameOver)
+        {
+            StartCoroutine(RotationControl());
+        }
+       
 
     }
 

@@ -32,6 +32,10 @@ public class EnemyHorizontal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!gameOver) {
+            EnemyMovement();
+
+        }
 
         if (dotProductScript.canSeePlayer && gameOver == false)
         {
@@ -39,10 +43,17 @@ public class EnemyHorizontal : MonoBehaviour
             enemyAudio.PlayOneShot(whatThe); //plays the "what the"
             gameOver = true; //stops the what the looping heavily
             this.anim.SetBool("isWalking", false);
-            this.anim.SetBool("isSurprised", true);
             
+
         }
-            
+
+        if (gameOver)
+        {
+            this.anim.SetBool("isSurprised", true);
+        }
+    }
+
+    public void EnemyMovement() { 
 
         //horizontal movement based on xLimits with debug logs
         if (moveRight && transform.position.x < xLimit && !gameOver)
@@ -76,5 +87,6 @@ public class EnemyHorizontal : MonoBehaviour
             transform.Rotate(0, 180, 0);
             //Debug.Log("Move Right = " + moveRight);
         }
+
         }
 }

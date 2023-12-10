@@ -1,21 +1,22 @@
 ﻿<Properties StartupConfiguration="{DFA42B8C-AE9E-35CA-A67D-9F23568EE777}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EnemyHorizontal.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PowerUpScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="12" Column="34" />
-      <File FileName="Assets/Scripts/UIHandler.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/MainCameraMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/DetectionScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/InGameMenuScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Timer.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="34" Column="9" />
+      <File FileName="Assets/Scripts/UIHandler.cs" />
+      <File FileName="Assets/Scripts/MainCameraMovement.cs" Line="42" Column="1" />
+      <File FileName="Assets/Scripts/DetectionScript.cs" />
+      <File FileName="Assets/Scripts/GameManager.cs" />
+      <File FileName="Assets/Scripts/InGameMenuScript.cs" />
+      <File FileName="Assets/Scripts/Timer.cs" />
       <File FileName="Assets/Scripts/EnemyHorizontal.cs" Line="40" Column="66" />
-      <File FileName="Assets/Scripts/DotProductScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/EnemyRotational.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/DotProductScript.cs" Line="68" Column="2" />
+      <File FileName="Assets/Scripts/EnemyRotational.cs" />
       <File FileName="Assets/Scripts/EnemyVertical.cs" />
-      <File FileName="Assets/Scripts/CarMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/SpawnManager.cs" Line="33" Column="1" />
-      <File FileName="Assets/Scripts/CameraMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/RocketTakeOff.cs" Line="19" Column="53" />
+      <File FileName="Assets/Scripts/CarMovement.cs" />
+      <File FileName="Assets/Scripts/SpawnManager.cs" />
+      <File FileName="Assets/Scripts/CameraMovement.cs" />
+      <File FileName="Assets/Scripts/RocketTakeOff.cs" />
+      <File FileName="Assets/Scripts/PowerUpScript.cs" Line="8" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,7 +24,7 @@
           <Node name="Avoid the Humanoid" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="EnemyHorizontal.cs" selected="True" />
+                <Node name="PowerUpScript.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -33,7 +34,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="edeac7bf-a35f-4025-b032-c7adfc622121" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="7601ef15-427c-4ef3-86d1-fe67d782b50e" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

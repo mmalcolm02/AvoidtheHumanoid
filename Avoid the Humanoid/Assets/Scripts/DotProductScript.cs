@@ -15,6 +15,8 @@ public class DotProductScript : MonoBehaviour
     public GameObject gameOverCanvas;
     public GameObject buttonHolderCanvas;
 
+    public LayerMask obstacleMask;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,10 +47,21 @@ public class DotProductScript : MonoBehaviour
         //check vision and range
         if (dotOverMag > visibility && distanceBetween <= radius)
         {
-            canSeePlayer = true;
-            Debug.Log("Can See Player");
-            gameOverCanvas.gameObject.SetActive(true);
-            buttonHolderCanvas.gameObject.SetActive(true);
+            float distanceToTarget = Vector3.Distance(player.transform.position, transform.position);
+            Vector3 directionNormalised = (player.transform.position - transform.position).normalized;
+
+            if (!Physics.Raycast(transform.position, directionNormalised, distanceToTarget, obstacleMask))
+            {
+                canSeePlayer = true;
+                Debug.Log("Can See Player");
+                gameOverCanvas.gameObject.SetActive(true);
+                buttonHolderCanvas.gameObject.SetActive(true);
+            }
+
+            else
+            {
+                canSeePlayer = false;
+            }
         }
 
     }

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+
     private DotProductScript dotProductScript;
     public Timer timer;
     public GameObject gameOverCanvas;
@@ -25,7 +26,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //option menu
+        //access to option menu on escape key
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             buttonHolderCanvas.gameObject.SetActive(true);
@@ -38,7 +39,7 @@ public class GameManager : MonoBehaviour
             gameOver = true;
         }
 
-        //game over consequences
+        //game over consequences - redundant and suitable for refactoring
         //if (dotProductScript.canSeePlayer == true)
         //{
         //    gameOverCanvas.gameObject.SetActive(true);

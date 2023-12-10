@@ -6,14 +6,12 @@ public class RocketTakeOff : MonoBehaviour
 {
     
 
-    // Start is called before the first frame update
-    void Start()
-    { 
-    }
+   //rocket take off script
 
     // Update is called once per frame
     void Update()
     {
+        //test game object is active, if yes then make it move
         if (gameObject.activeSelf)
         {
             transform.Translate(Vector3.forward * 5 * Time.deltaTime);

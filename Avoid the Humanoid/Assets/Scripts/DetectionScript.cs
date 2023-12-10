@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DetectionScript : MonoBehaviour
 {
-
+    //debug script to test dot product script - redundant and suitable for refactoring
     private DotProductScript dps;
 
     // Start is called before the first frame update

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PowerUpScript : MonoBehaviour
 {
-
+    //planning for the pebble powerup
     public bool isOnGround;
     public bool hitGround = false;
     public float yOffset = 1.15f;

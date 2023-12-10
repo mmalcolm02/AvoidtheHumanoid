@@ -4,20 +4,32 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //player boundaries neighbourhood level
     public float speed = 10;
     public float rangeX = 47;
     public float rangeZ = 280;
+
     public Rigidbody playerRB;
     public Animator anim;
+
+    //interaction with pop up screens
     public GameObject diedCanvas;
     public GameObject buttonHolderCanvas;
     public GameObject successCanvas;
     public GameObject timerCanvas;
+
+    //detect collision
     public bool collision = false;
+
+    //interact with end game animation
     public GameObject rocketOpen;
     public GameObject rocketClosed;
+
+
     public bool victory = false;
     public bool hasPebble = false;
+
+    //switch camera on desert end from fp to overhead
     public GameObject mainCamera;
 
     // Start is called before the first frame update
@@ -34,6 +46,7 @@ public class PlayerController : MonoBehaviour
         PlayerContraints();
         Still();
 
+        //planning pebble upgrade
         if (hasPebble && Input.GetKeyDown(KeyCode.Space))
         {
             //instantiate pebble
@@ -41,7 +54,7 @@ public class PlayerController : MonoBehaviour
 
         }
     }
-    //Player Movement based on Add Force function
+    //Player Movement based on transform however creates some collider issues
     void PlayerMovement()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -84,11 +97,12 @@ horizontalInput;
         }
     }
 
+    //player getting hit by car
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Car"))
         {
-            Debug.Log("Car Collission");
+            //Debug.Log("Car Collision");
             collision = true;
             mainCamera.gameObject.SetActive(true);
             //this.ThirdPersonCamera.gameObject.SetActive(false);
@@ -98,11 +112,13 @@ horizontalInput;
 
         }
 
+        //playercolliding with end goal - rocket
         if (other.gameObject.CompareTag("Rocket"))
         {
             collision = true;
+            mainCamera.gameObject.SetActive(true);
             Destroy(gameObject);
-            Debug.Log("Rocket Collission");
+            //Debug.Log("Rocket Collision");
             rocketOpen.gameObject.SetActive(false);
             rocketClosed.gameObject.SetActive(true);
             successCanvas.gameObject.SetActive(true);
@@ -113,6 +129,7 @@ horizontalInput;
 
     }
 
+    //preparing to utilise power up - pebble
     private void OnCollisionEnter(Collision other)
     {
         collision = true;

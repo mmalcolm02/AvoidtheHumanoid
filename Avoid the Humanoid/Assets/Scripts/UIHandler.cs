@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class UIHandler : MonoBehaviour
 {
-
+    //main menu UI
     public void OnButtonPress(string buttonValue)
     {
         switch (buttonValue)

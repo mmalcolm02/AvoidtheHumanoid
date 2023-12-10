@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class DotProductScript : MonoBehaviour
 {
+    //dot product detection script to determine if player is ssen
 
+    //radius of detection
     public float radius = 30.0f;
     public float distanceBetween;
     public float degreesSeen;
@@ -15,9 +17,10 @@ public class DotProductScript : MonoBehaviour
     public GameObject gameOverCanvas;
     public GameObject buttonHolderCanvas;
 
+    //obstacles allow player to hide, mask if line of sight intersects obstacle
     public LayerMask obstacleMask;
 
-    // Start is called before the first frame update
+    // Ensure player begins unseen
     void Start()
     {
         canSeePlayer = false;
@@ -47,13 +50,14 @@ public class DotProductScript : MonoBehaviour
         //check vision and range
         if (dotOverMag > visibility && distanceBetween <= radius)
         {
+            //raycast statement to test if player blocked by obstacle
             float distanceToTarget = Vector3.Distance(player.transform.position, transform.position);
             Vector3 directionNormalised = (player.transform.position - transform.position).normalized;
 
             if (!Physics.Raycast(transform.position, directionNormalised, distanceToTarget, obstacleMask))
             {
                 canSeePlayer = true;
-                Debug.Log("Can See Player");
+                //Debug.Log("Can See Player");
                 gameOverCanvas.gameObject.SetActive(true);
                 buttonHolderCanvas.gameObject.SetActive(true);
             }

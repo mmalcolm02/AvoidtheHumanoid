@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class InGameMenuScript : MonoBehaviour
 {
+    //script to access in game menu superceeded by game manager and suitable for refactoring
     public GameObject menuCanvas;
 
     public void OnButtonPress(string buttonText)

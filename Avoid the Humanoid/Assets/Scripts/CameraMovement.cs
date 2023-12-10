@@ -4,26 +4,28 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-
+    //camera behaviour for third person camera used in desert
     public PlayerController player;
     private float sensitivity = 500f;
     private float clampAngle = 85f;
     private float verticalRotation;
     private float horizontalRotation;
 
-    // Start is called before the first frame update
+    // Set up initial direction
     void Start()
     {
         this.verticalRotation = this.transform.localEulerAngles.x;
         this.horizontalRotation = this.transform.eulerAngles.y;
     }
-    // Update is called once per frame
+    // Update based on mouse direction
     private void Update()
     {
         Look();
-        Debug.DrawRay(this.transform.position, this.transform.forward * 2,
-        Color.red);
+        //Debug.DrawRay(this.transform.position, this.transform.forward * 2,
+        //Color.red);
     }
+
+    //mouse sensitivity and direction behaviour
     private void Look()
     {
         float mouseVertical = -Input.GetAxis("Mouse Y");

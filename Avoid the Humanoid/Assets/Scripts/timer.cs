@@ -5,6 +5,7 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
+    //script to begin timer and set the count down to end game.
     [SerializeField] float startTime;
     public float currentTime;
     public bool timerOn = false;
@@ -12,7 +13,7 @@ public class Timer : MonoBehaviour
     [SerializeField] TMP_Text timerText;
 
 
-    // Start is called before the first frame update
+    // begin the timer and specify the values on the timer
     void Start()
     {
         timerOn = true;
@@ -20,7 +21,7 @@ public class Timer : MonoBehaviour
         timerText.text = "Time: " + currentTime.ToString("f1") + "s";
     }
 
-    // Update is called once per frame
+    // Update timer 
     void Update()
     {
         if (timerOn)
@@ -29,7 +30,7 @@ public class Timer : MonoBehaviour
                 
             if(currentTime <=0)
             {
-                Debug.Log("Time is Up");
+                //Debug.Log("Time is Up");
                 timerOn = false;
                 timeUp = true;
                 currentTime = 0;

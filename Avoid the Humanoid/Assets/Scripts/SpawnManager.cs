@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-
+    //spawning of car prefabs as enemy/obstacles
     public GameObject carPrefab;
+
+    //Determines position cars spawn postion in Neighbourhood, and public to change values in Desert enviornment
     public Vector3 spawnPosLeft = new Vector3(-98, 6, 136);
     public Vector3 spawnPosRight = new Vector3(98, 6, 116);
+
+    //eulers public to change rotation of cars in desert environment
     public float eulerX;
     public float eulerY;
     public float eulerZ;
@@ -17,7 +21,7 @@ public class SpawnManager : MonoBehaviour
 
 
 
-    // Start is called before the first frame update
+    // Begin the first instantiations of car prefabs entering from left and right
     void Start()
     {
         Invoke("InstantiateLeft", 1);
@@ -25,19 +29,12 @@ public class SpawnManager : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-
-
-    }
-
+    //after car instantiated these methods govern random spawn rate of future cars
     void InstantiateLeft()
     {
         float leftTime = Random.Range(2, 5);
         Instantiate(carPrefab, spawnPosLeft, Quaternion.Euler(new Vector3(eulerRX, eulerRY, eulerRZ)));
-        Debug.Log("Left");
+        //Debug.Log("Left");
         Invoke("InstantiateLeft",leftTime);
         
 }
@@ -45,7 +42,7 @@ public class SpawnManager : MonoBehaviour
     {
         float rightTime = Random.Range(2, 5);
         Instantiate(carPrefab, spawnPosRight, Quaternion.Euler(new Vector3(eulerX,eulerY,eulerZ)));
-        Debug.Log("Right");
+        //Debug.Log("Right");
         Invoke("InstantiateRight", rightTime);
     }
 

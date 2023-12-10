@@ -5,20 +5,33 @@ using UnityEngine;
 public class EnemyHorizontal : MonoBehaviour
 {
 
+    //original enemy and test bed for future interactions
+
+    //movement variables
     public float speedHorizontal = 5;
     public float xLimit = 47; //houndaries of enemy movement
+
+    //providing a rigid body - however redundant and refactor suggested
     private Rigidbody enemyRB;
+
+    //variables to change direction
     public bool moveRight = true;
     public bool moveLeft = false;
+
+    //sound effects
     public AudioClip mumble;
     public AudioClip whatThe;
     private AudioSource enemyAudio;
+
+    //how to end each enemy interactions
     private bool gameOver = false;
+
     public Animator anim;
 
+    //link to detection script
     private DotProductScript dotProductScript;
 
-    // Start is called before the first frame update
+    // connect other script variables and set initial behaviour
     void Start()
     {
         dotProductScript = GetComponent<DotProductScript>();
@@ -29,7 +42,7 @@ public class EnemyHorizontal : MonoBehaviour
         this.anim.SetBool("isWalking", true);
     }
 
-    // Update is called once per frame
+    // determine behaviour based whether player is visible or game is over
     void Update()
     {
         if (!gameOver) {
@@ -53,6 +66,7 @@ public class EnemyHorizontal : MonoBehaviour
         }
     }
 
+    //enemey movement behaviour including debug statements
     public void EnemyMovement() { 
 
         //horizontal movement based on xLimits with debug logs

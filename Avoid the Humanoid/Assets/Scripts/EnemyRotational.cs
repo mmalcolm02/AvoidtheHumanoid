@@ -5,20 +5,22 @@ using UnityEngine;
 public class EnemyRotational : MonoBehaviour
 {
 
-   
+    //rotatainal enemy behaviour variables
     public float angleOfRotation = -45.0f;
     public float rotationDelay = 3.0f;
 
+    //access to mumbling sound effect
     public AudioClip mumble;
     public AudioClip whatThe;
     private AudioSource enemyAudio;
 
+    //detection script link
     private DotProductScript dotProductScript;
     private bool gameOver = false;
 
     public Animator anim;
 
-    // Start is called before the first frame update
+    // Start animations, sound effects and initial behaviour
     void Start()
     {
 
@@ -32,7 +34,7 @@ public class EnemyRotational : MonoBehaviour
         enemyAudio.Play();
     }
 
-    // Update is called once per frame
+    // Test if game is over against dot product script
     void Update()
     {
 

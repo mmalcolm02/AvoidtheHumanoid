@@ -4,21 +4,23 @@ using UnityEngine;
 
 public class EnemyVertical : MonoBehaviour
 {
+    //simiar names to horizontal enemy due to copy and paste, but viable relative to rotation
     public float speedHorizontal = 5;
     public float zRange = 70; //how far enemy will travel
     private Rigidbody enemyRB;
     public bool moveForward = true; //bool to determine enemy direction
-    private Vector3 startingPos;
+    private Vector3 startingPos;//to set player position
     public AudioClip mumble;
     public AudioClip whatThe;
     private AudioSource enemyAudio;
     private bool gameOver = false;
 
+    //check against detection criteria
     private DotProductScript dotProductScript;
 
     public Animator anim;
 
-    // Start is called before the first frame update
+    // Start enemy animation, audio and behaviour
     void Start()
     {
         //determine starting position of the enemy
@@ -31,7 +33,7 @@ public class EnemyVertical : MonoBehaviour
         enemyAudio.Play();
     }
 
-    // Update is called once per frame
+    // Test criteria for the game to end.
     void Update()
     {
         if (!gameOver)
@@ -46,8 +48,6 @@ public class EnemyVertical : MonoBehaviour
             enemyAudio.PlayOneShot(whatThe); //plays the "what the"
             gameOver = true; //stops the what the looping heavily
             this.anim.SetBool("isWalking", false);
-
-
         }
 
         if (gameOver)
@@ -56,6 +56,7 @@ public class EnemyVertical : MonoBehaviour
         }
     }
 
+    //enemy behaviour
     public void EnemyMovement()
     { 
         //translation details for the enemies including debug logs to check
